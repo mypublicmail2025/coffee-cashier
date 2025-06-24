@@ -1,0 +1,78 @@
+@import './var.css';
+@import 'element-plus/theme-chalk/dark/css-vars.css';
+
+.reset-margin [class*='el-icon'] + span {
+  margin-left: 2px !important;
+}
+
+// 解决抽屉弹出时，body宽度变化的问题
+.el-popup-parent--hidden {
+  width: 100% !important;
+}
+
+.el-table__header{
+  .el-table__cell{
+      background-color:#F1F3F6  !important;
+  }
+}
+/* nprogress 适配 element-plus 的主题色 */
+#nprogress {
+  & .bar {
+    background-color: var(--el-color-primary) !important;
+  }
+
+  & .peg {
+    box-shadow: 0 0 10px var(--el-color-primary), 0 0 5px var(--el-color-primary) !important;
+  }
+
+  & .spinner-icon {
+    border-top-color: var(--el-color-primary);
+    border-left-color: var(--el-color-primary);
+  }
+}
+
+// 解决富文本编辑框行高异常问题
+.el-form-item .el-form-item__content .edui-default{
+  line-height: normal;
+}
+
+// 添加横屏相关样式
+@media screen and (orientation: portrait) {
+  html.force-landscape {
+    transform: rotate(-90deg);
+    transform-origin: left top;
+    width: 100vh;
+    height: 100vw;
+    overflow-x: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+}
+
+// 针对iPad Pro 11寸的优化
+@media screen and (width: 1194px) and (height: 834px) {
+  .app-container {
+    max-width: 1194px;
+    max-height: 834px;
+    margin: 0 auto;
+  }
+}
+
+// 针对iPad Air 10.9寸的优化
+@media screen and (width: 1180px) and (height: 820px) {
+  .app-container {
+    max-width: 1180px;
+    max-height: 820px;
+    margin: 0 auto;
+  }
+}
+
+// 针对iPad 10.2寸的优化
+@media screen and (width: 1080px) and (height: 810px) {
+  .app-container {
+    max-width: 1080px;
+    max-height: 810px;
+    margin: 0 auto;
+  }
+}
